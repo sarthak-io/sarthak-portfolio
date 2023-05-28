@@ -7,6 +7,7 @@ import Controls from "./Controls";
 import { EventEmitter } from "events";
 export default class World extends EventEmitter{
     constructor() {
+        
         super();
         this.experience = new Experience();
         this.sizes = this.experience.sizes;
@@ -16,17 +17,19 @@ export default class World extends EventEmitter{
          this.resources = this.experience.resources;
          this.theme = this.experience.theme;
 
-         this.theme.on("switch", (theme) => {
-            this.switchTheme(theme);
-        });
          this.resources.on("ready", ()=>{
             this.room = new Room();
             this.environment= new Environment();
             this.controls = new Controls();
             this.floor = new Floor();
             this.emit("worldready");
+            console.log("worldready")
             
          });
+         
+         this.theme.on("switch", (theme) => {
+            this.switchTheme(theme);
+        });
         
          
    
@@ -39,6 +42,7 @@ export default class World extends EventEmitter{
         }
     }
     resize() {
+       
        
     
 

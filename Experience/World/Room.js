@@ -1,6 +1,7 @@
 import Experience from "../Supermain";
 import * as THREE from 'three';
 import { gsap } from "gsap";
+import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 export default class Room {
     constructor() {
         this.experience = new Experience();
@@ -17,7 +18,7 @@ export default class Room {
         }
 
         this.setModel();
-        this.setAnimation();
+       
         this.onMouseMove();
 
     }
@@ -79,7 +80,7 @@ export default class Room {
     });
     const width = 0.5;
     const height = 0.5;
-    const intensity = 12;
+    const intensity = 3;
     const rectLight = new THREE.RectAreaLight(
         0xffffff,
         intensity,
@@ -90,17 +91,20 @@ export default class Room {
     rectLight.rotation.x = -Math.PI / 2;
     rectLight.rotation.z = Math.PI / 2;
     this.actualRoom.add(rectLight);
+    if(this.experience.sizes.device ==="mobile"){
+        rectLight.scale.set(0,0,0)
+    }
 
     this.roomChildren["rectLight"] = rectLight;
     this.scene.add(this.actualRoom)
     this.actualRoom.scale.set(0.06,0.06,0.06)
     
    }
-   setAnimation() {
-    this.mixer = new THREE.AnimationMixer(this.actualRoom);
-    this.swim = this.mixer.clipAction(this.room.animations[12]);
-    this.swim.play();
-}
+//    setAnimation() {
+//     this.mixer = new THREE.AnimationMixer(this.actualRoom);
+//     this.swim = this.mixer.clipAction(this.room.animations[12]);
+//     this.swim.play();
+// }
    onMouseMove(){
     window.addEventListener("mousemove",(e)=>{
     this.rotation= ((e.clientX- window.innerWidth/2)*2)/window.innerWidth;
@@ -122,6 +126,6 @@ export default class Room {
             this.lerp.ease
           );
           this.actualRoom.rotation.y=this.lerp.current;
-        //   this.mixer.update(this.time.delta * 0.0009);
+    
     }
 }

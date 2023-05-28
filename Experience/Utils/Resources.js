@@ -29,6 +29,8 @@ export default class Resources extends EventEmitter {
         this.loaders.gltfLoader.setDRACOLoader(this.loaders.dracoLoader);
     }
     startLoading() {
+   
+        
         for (const asset of this.assets) {
             if (asset.type === "glbModel") {
                 this.loaders.gltfLoader.load(asset.path, (file) => {

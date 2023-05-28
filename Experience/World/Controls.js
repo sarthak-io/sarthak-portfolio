@@ -3,6 +3,7 @@ import Experience from "../Supermain";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 import Floor from "./Floor";
 
 export default class Controls {
@@ -15,6 +16,7 @@ export default class Controls {
     this.camera = this.experience.camera;
     this.room = this.experience.world.room.actualRoom;
     this.floor = new Floor();
+   
     this.room.children.forEach((child) => {
       if (child.type === "RectAreaLight") {
         this.rectLight = child;
@@ -24,15 +26,15 @@ export default class Controls {
     this.circleSecond = this.floor.circleSecond;
     this.circleThird = this.floor.circleThird;
     gsap.registerPlugin(ScrollTrigger);
-   
+
 
     this.setScrollTrigger();
-    
+
   }
   // setupASScroll() {
   //   // https://github.com/ashthornton/asscroll
   //   const asscroll = new ASScroll({
-      
+
   //     disableRaf: true,
   //   });
 
@@ -82,7 +84,7 @@ export default class Controls {
     // create
     let mm = gsap.matchMedia();
 
-    // add a media query. When it matches, the associated function will run
+   
     mm.add("(min-width: 969px)", () => {
       // Fisrt section
       this.FirstMoveTimline = new gsap.timeline({
@@ -162,82 +164,7 @@ export default class Controls {
         this.room.position.set(0, 0, 0);
         this.rectLight.width = 0.3;
         this.rectLight.height = 0.4;
-
-
-        // First section -----------------------------------------
-        this.firstMoveTimeline = new gsap.timeline({
-          scrollTrigger: {
-            trigger: ".first-move",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.6,
-            // invalidateOnRefresh: true,
-          },
-        }).to(this.room.scale, {
-          x: 0.06,
-          y: 0.06,
-          z: 0.06,
-        });
-
-        // Second section -----------------------------------------
-        this.secondMoveTimeline = new gsap.timeline({
-          scrollTrigger: {
-            trigger: ".second-move",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.6,
-            invalidateOnRefresh: true,
-          },
-        })
-          .to(
-            this.room.scale,
-            {
-              x: 0.2,
-              y: 0.2,
-              z: 0.2,
-            },
-            "same"
-          )
-          .to(
-            this.rectLight,
-            {
-              width: 0.3 * 3.4,
-              height: 0.4 * 3.4,
-            },
-            "same"
-          )
-
-          .to(
-            this.room.position,
-            {
-              x: 2,
-
-            },
-            "same"
-          );
-
-        // Third section -----------------------------------------
-        this.thirdMoveTimeline = new gsap.timeline({
-          scrollTrigger: {
-            trigger: ".third-move",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.6,
-            invalidateOnRefresh: true,
-          },
-        }).to(
-          this.room.scale,
-          {
-            x: 0.18,
-            y: 0.18,
-            z: 0.18,
-          },
-          "same"
-        )
-
-          .to(this.room.position, {
-            z: -6.5,
-          }, "same")
+        
 
       })
 
@@ -301,56 +228,56 @@ export default class Controls {
       });
       this.firstCircle = new gsap.timeline({
         scrollTrigger: {
-            trigger: ".first-move",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.6,
+          trigger: ".first-move",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.6,
         },
-    }).to(this.circleFirst.scale, {
+      }).to(this.circleFirst.scale, {
         x: 3,
         y: 3,
         z: 3,
-    });
+      });
 
-    // Second section -----------------------------------------
-    this.secondCircle = new gsap.timeline({
+      // Second section -----------------------------------------
+      this.secondCircle = new gsap.timeline({
         scrollTrigger: {
-            trigger: ".second-move",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.6,
+          trigger: ".second-move",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.6,
         },
-    })
+      })
         .to(
-            this.circleSecond.scale,
-            {
-                x: 3,
-                y: 3,
-                z: 3,
-            },
-            "same"
+          this.circleSecond.scale,
+          {
+            x: 3,
+            y: 3,
+            z: 3,
+          },
+          "same"
         )
         .to(
-            this.room.position,
-            {
-                y: 0.7,
-            },
-            "same"
+          this.room.position,
+          {
+            y: 0.7,
+          },
+          "same"
         );
 
-    // Third section -----------------------------------------
-    this.thirdCircle = new gsap.timeline({
+      // Third section -----------------------------------------
+      this.thirdCircle = new gsap.timeline({
         scrollTrigger: {
-            trigger: ".third-move",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.6,
+          trigger: ".third-move",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.6,
         },
-    }).to(this.circleThird.scale, {
+      }).to(this.circleThird.scale, {
         x: 3,
         y: 3,
         z: 3,
-    });
+      });
       // Mini Platform Animations
       this.secondPartTimeline = new gsap.timeline({
         scrollTrigger: {

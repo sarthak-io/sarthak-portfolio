@@ -7,7 +7,7 @@ export default class Camera {
         this.sizes = this.experience.sizes;
         this.scene = this.experience.scene;
         this.canvas = this.experience.canvas;
-
+   
         this.createPerspectiveCamera();
         this.createOrthographicCamera();
         this.setOrbitControls();
@@ -36,16 +36,7 @@ export default class Camera {
         this.orthographicCamera.position.y = 5.7;
         this.orthographicCamera.position.z = 10;
         this.orthographicCamera.rotation.x = -Math.PI / 6;
-        // this.helper = new THREE.CameraHelper(this.orthographicCamera)
-        // this.scene.add(this.orthographicCamera)
-        // this.scene.add(this.helper)
-
-    //    const size =20;
-    //    const division=20;
-    //    const gridHelper= new THREE.GridHelper(size,division)
-    //    this.scene.add(gridHelper)
-    //    const axesHelper = new THREE.AxesHelper(5);
-    //    this.scene.add(axesHelper)
+        this.scene.add(this.orthographicCamera);
 
 
     }
@@ -57,6 +48,17 @@ export default class Camera {
     
     resize() {
         // updates cameras
+    //             this.helper = new THREE.CameraHelper(this.orthographicCamera)
+    //     this.scene.add(this.orthographicCamera)
+    //     this.scene.add(this.helper)
+
+    //    const size =20;
+    //    const division=20;
+    //    const gridHelper= new THREE.GridHelper(size,division)
+    //    this.scene.add(gridHelper)
+    //    const axesHelper = new THREE.AxesHelper(5);
+    //    this.scene.add(axesHelper)
+    
         this.perspectiveCamera.aspect = this.sizes.aspect;
         this.perspectiveCamera.updateProjectionMatrix();
 

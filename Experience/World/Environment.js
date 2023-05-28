@@ -11,6 +11,7 @@ export default class Environment {
 
         this.setSunlight();
         
+        
     }
    setSunlight(){
    this.sunLight = new THREE.DirectionalLight("#ffffff",3);
@@ -23,6 +24,12 @@ export default class Environment {
    this.scene.add(this.sunLight)
    this.ambientLight = new THREE.AmbientLight("#ffffff",1.5)
    this.scene.add(this.ambientLight)
+   if(this.experience.sizes.device === "mobile"){
+    this.sunLight.shadow.mapSize.set(512,512);
+    this.sunLight.shadow.normalBias=0.01;
+    this.sunLight.intensity = 1.5; 
+    this.ambientLight.intensity = 0.5; 
+   }
    }
    
    switchTheme(theme) {
@@ -65,7 +72,7 @@ export default class Environment {
 }
     resize() {
 
-
+  
 
     }
     update() {

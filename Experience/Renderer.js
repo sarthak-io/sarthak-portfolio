@@ -7,7 +7,7 @@ export default class Renderer {
         this.scene = this.experience.scene;
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
-        
+        this.scene.background = new THREE.Color(0xeeeeee);
         this.setRenderer();
         
 
@@ -32,6 +32,7 @@ export default class Renderer {
     resize() {
         this.renderer.setSize(this.sizes.width, this.sizes.height);
         this.renderer.setPixelRatio(this.sizes.pixelRatio);
+       
     
 
     }
