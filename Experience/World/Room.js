@@ -35,12 +35,12 @@ export default class Room {
             })
         }
      
-        if (child.name === "Tv") {
-            child.children[1].rotation.x= Math.PI
-            child.children[1].material = new THREE.MeshBasicMaterial({
-                map: this.resources.items.screen,
-            });
-        }
+        // if (child.name === "Tv") {
+        //     child.children[1].rotation.x= Math.PI
+        //     child.children[1].material = new THREE.MeshBasicMaterial({
+        //         map: this.resources.items.screen,
+        //     });
+        // }
         if(child.name ==="Aqua_glass"){
             console.log(child)
             child.children[0].material = new THREE.MeshPhysicalMaterial();

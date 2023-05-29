@@ -25,8 +25,8 @@ export default class Environment {
    this.ambientLight = new THREE.AmbientLight("#ffffff",1.5)
    this.scene.add(this.ambientLight)
    if(this.experience.sizes.device === "mobile"){
-    this.sunLight.shadow.mapSize.set(512,512);
-    this.sunLight.shadow.normalBias=0.01;
+    this.sunLight.shadow.mapSize.set(0,0);
+    this.sunLight.shadow.normalBias=0;
     this.sunLight.intensity = 1.5; 
     this.ambientLight.intensity = 0.5; 
    }
