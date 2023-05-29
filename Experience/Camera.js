@@ -61,13 +61,14 @@ export default class Camera {
     
         this.perspectiveCamera.aspect = this.sizes.aspect;
         this.perspectiveCamera.updateProjectionMatrix();
-
+         console.log(this.perspectiveCamera.position)
 
         this.orthographicCamera.left = (-this.sizes.aspect * this.sizes.frusatum) / 2;
         this.orthographicCamera.right = (this.sizes.aspect * this.sizes.frustum) / 2;
         this.orthographicCamera.top = this.sizes.frustum / 2;
         this.orthographicCamera.bottom = -this.sizes.frustum / 2;
         this.orthographicCamera.updateProjectionMatrix()
+        console.log(this.orthographicCamera.position)
     }
     update() {
     this.controls.update();

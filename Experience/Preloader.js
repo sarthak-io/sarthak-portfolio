@@ -177,166 +177,166 @@ export default class Preloader extends EventEmitter {
                     },
                     "same"
                 )
-                .set(this.roomChildren.body.scale, {
-                    x: 1,
-                    y: 1,
-                    z: 1,
-                })
-                .to(
-                    this.roomChildren.Cube.scale,
-                    {
-                        x: 0,
-                        y: 0,
-                        z: 0,
-                        duration: 1,
-                    },
-                    "introtext"
-                )
-                .to(
-                    ".intro-main-title .animatedis",
-                    {
-                        yPercent: 0,
-                        stagger: 0.07,
-                        ease: "back.out(1.7)",
-                    },
-                    "introtext"
-                )
-                .to(
-                    ".intro-main-description .animatedis",
-                    {
-                        yPercent: 0,
-                        stagger: 0.07,
-                        ease: "back.out(1.7)",
-                    },
-                    "introtext"
-                )
-                .to(
-                    ".first-sub .animatedis",
-                    {
-                        yPercent: 0,
-                        stagger: 0.07,
-                        ease: "back.out(1.7)",
-                    },
-                    "introtext"
-                )
-                .to(
-                    ".second-sub .animatedis",
-                    {
-                        yPercent: 0,
-                        stagger: 0.07,
-                        ease: "back.out(1.7)",
-                    },
-                    "introtext"
-                )
-                .to(
-                    this.roomChildren.Aqua_glass.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    ">-0.5"
-                )
-                .to(
-                    this.roomChildren.watch.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    ">-0.4"
-                )
-                .to(
-                    this.roomChildren.shells.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    ">-0.3"
-                )
-                .to(
-                    this.roomChildren.floor.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    ">-0.2"
-                )
-                .to(
-                    this.roomChildren.desk.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    ">-0.1"
-                )
-                .to(
-                    this.roomChildren.upper.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    ">-0.1"
-                )
-                .to(this.roomChildren.Tv.scale, {
-                    x: 0.145823,
-                    y: 1.82305,
-                    z: 2.99216,
-                    ease: "back.out(2.2)",
-                    duration: 0.5,
-                })
-                .set(this.roomChildren.farm.scale, {
-                    x: 1,
-                    y: 1,
-                    z: 1,
-                })
-                .to(
-                    this.roomChildren.chair.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    "chair"
-                )
-                .to(
-                    this.roomChildren.Fish.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.5,
-                    },
-                    "chair"
-                )
-                .to(
-                    this.roomChildren.chair.rotation,
-                    {
-                        y: 4 * Math.PI + Math.PI / 4,
-                        ease: "power2.out",
-                        duration: 1,
-                    },
-                    "chair"
-                )
+                // .set(this.roomChildren.body.scale, {
+                //     x: 1,
+                //     y: 1,
+                //     z: 1,
+                // })
+                // .to(
+                //     this.roomChildren.Cube.scale,
+                //     {
+                //         x: 0,
+                //         y: 0,
+                //         z: 0,
+                //         duration: 1,
+                //     },
+                //     "introtext"
+                // )
+                // .to(
+                //     ".intro-main-title .animatedis",
+                //     {
+                //         yPercent: 0,
+                //         stagger: 0.07,
+                //         ease: "back.out(1.7)",
+                //     },
+                //     "introtext"
+                // )
+                // .to(
+                //     ".intro-main-description .animatedis",
+                //     {
+                //         yPercent: 0,
+                //         stagger: 0.07,
+                //         ease: "back.out(1.7)",
+                //     },
+                //     "introtext"
+                // )
+                // .to(
+                //     ".first-sub .animatedis",
+                //     {
+                //         yPercent: 0,
+                //         stagger: 0.07,
+                //         ease: "back.out(1.7)",
+                //     },
+                //     "introtext"
+                // )
+                // .to(
+                //     ".second-sub .animatedis",
+                //     {
+                //         yPercent: 0,
+                //         stagger: 0.07,
+                //         ease: "back.out(1.7)",
+                //     },
+                //     "introtext"
+                // )
+                // .to(
+                //     this.roomChildren.Aqua_glass.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     ">-0.5"
+                // )
+                // .to(
+                //     this.roomChildren.watch.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     ">-0.4"
+                // )
+                // .to(
+                //     this.roomChildren.shells.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     ">-0.3"
+                // )
+                // .to(
+                //     this.roomChildren.floor.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     ">-0.2"
+                // )
+                // .to(
+                //     this.roomChildren.desk.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     ">-0.1"
+                // )
+                // .to(
+                //     this.roomChildren.upper.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     ">-0.1"
+                // )
+                // .to(this.roomChildren.Tv.scale, {
+                //     x: 0.145823,
+                //     y: 1.82305,
+                //     z: 2.99216,
+                //     ease: "back.out(2.2)",
+                //     duration: 0.5,
+                // })
+                // .set(this.roomChildren.farm.scale, {
+                //     x: 1,
+                //     y: 1,
+                //     z: 1,
+                // })
+                // .to(
+                //     this.roomChildren.chair.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     "chair"
+                // )
+                // .to(
+                //     this.roomChildren.Fish.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.5,
+                //     },
+                //     "chair"
+                // )
+                // .to(
+                //     this.roomChildren.chair.rotation,
+                //     {
+                //         y: 4 * Math.PI + Math.PI / 4,
+                //         ease: "power2.out",
+                //         duration: 1,
+                //     },
+                //     "chair"
+                // )
                 .to(".down-btn", {
                     opacity: 1,
                     onComplete: resolve,
