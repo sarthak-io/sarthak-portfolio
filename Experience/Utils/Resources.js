@@ -19,6 +19,7 @@ export default class Resources extends EventEmitter {
 
         this.setLoaders();
         this.startLoading();
+        window.addEventListener("resize", this.onResize.bind(this));
     }
 
     setLoaders() {
@@ -61,6 +62,14 @@ export default class Resources extends EventEmitter {
             }
         }
     }
+    onResize=() =>{
+        // Clear previous assets
+        this.items = {};
+        this.loaded = 0;
+    
+        // Restart loading process
+        this.startLoading();
+      }
 
     singleAssetLoaded(asset, file) {
         this.items[asset.name] = file;

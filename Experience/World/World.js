@@ -18,6 +18,7 @@ export default class World extends EventEmitter{
          this.theme = this.experience.theme;
 
          this.resources.on("ready", ()=>{
+            console.log("all resources ready")
             this.room = new Room();
             this.environment= new Environment();
             this.controls = new Controls();
