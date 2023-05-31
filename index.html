@@ -7,18 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PortFolio</title>
   <script>
-   
+ // Check if the page has been refreshed
+if (!sessionStorage.getItem('refreshed')) {
+  // Set the 'refreshed' flag in session storage
+  sessionStorage.setItem('refreshed', 'true');
 
-
-
-
-
+  // Reload the page
+  location.reload();
+}
   </script>
+  
 </head>
 
 <body class="light-theme">
+
   <div class="main-frame">
     <canvas class="canvas"></canvas>
+    
   </div>
 
   <div class="loader">
@@ -32,7 +37,7 @@
   </div>
 
 
-
+  <div class="page" asscroll-container>
   <div class="day-night">
     <div class="sun">
       <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
@@ -51,13 +56,9 @@
     </div>
   </div>
 
-  <div class="main-page">
+  <div class="main-page" asscroll>
     <section class="intro">
-      <div class="cube">
-        <div class="side top"></div>
-        <div class="side left"></div>
-        <div class="side front"></div>
-     </div>
+  
       <div class="intro-wrapper">
 
 
@@ -142,7 +143,7 @@
       </div>
 
       <div class="section-detail-wrapper">
-        <h3 class="section-heading">NFTropolis: Ancient Treasures Unleashed!</h3>
+        <h3 class="section-heading">NFTropolis: Ancient Treasures Unleashed!(Under construction)</h3>
         <p class="section-text">Get ready to dive into the mind-blowing world of NFTropolis: Ancient Treasures
           Unleashed! 🏛️💎 This groundbreaking project combines history, art, and cutting-edge technology in an
           explosive fusion of epic proportions. Using the mighty powers of Blender, Three.js, and Vite, I resurrected
@@ -235,7 +236,7 @@
     </section>
 
   </div>
-
+</div>
   <script type="module" src="/main.js">
 
   </script>

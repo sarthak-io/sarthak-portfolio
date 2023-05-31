@@ -5,8 +5,11 @@ export default class Environment {
     constructor() {
         this.experience = new Experience();
         this.scene = this.experience.scene;
-        this.resources = this.experience.resources;
-        this.room = this.resources.items.room;
+        this.obj = {
+            colorObj: { r: 0, g: 0, b: 0 },
+            intensity: 3,
+        };
+     
         
 
         this.setSunlight();
@@ -22,18 +25,15 @@ export default class Environment {
    
    this.sunLight.position.set(-.5,3,1);
    this.scene.add(this.sunLight)
+  
    this.ambientLight = new THREE.AmbientLight("#ffffff",1.5)
    this.scene.add(this.ambientLight)
-   if(this.experience.sizes.device === "mobile"){
-    this.sunLight.shadow.mapSize.set(0,0);
-    this.sunLight.shadow.normalBias=0;
-    this.sunLight.intensity = 0.5; 
-    this.ambientLight.intensity = 0; 
-   }
+     
+
    }
    
    switchTheme(theme) {
-    // console.log(this.sunLight);
+
     if (theme === "dark") {
         GSAP.to(this.sunLight.color, {
             r: 0.17254901960784313,
@@ -66,7 +66,7 @@ export default class Environment {
             intensity: 3,
         });
         GSAP.to(this.ambientLight, {
-            intensity: 1,
+            intensity: 1.5,
         });
     }
 }

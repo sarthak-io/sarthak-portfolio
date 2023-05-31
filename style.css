@@ -8,6 +8,7 @@
 
 html, body{
   font-family: "Montserrat", sans-serif;
+  overflow: hidden;
 }
 
 
@@ -27,21 +28,26 @@ svg{
   --color-pink-light: #e5a1aa;
   --color-green-light: #7AD0AC;
   --color-blue-light: #8395CD;
+  --color-bg-light:#E6E1C7;
 
 
   --color-text-dark: #FAF4E5;
   --color-background-dark: #8395CD;
+  --color-bg-dark: #8395CD;
 }
 
 .light-theme{
+  --color-bg:var(--color-bg-light);
   --color-text: var(--color-text-light);
   --color-background: var(--color-background-light);
   --color-pink: var(--color-pink-light);
   --color-green: var(--color-green-light);
   --color-blue: var(--color-blue-light);
+
 }
 
 .dark-theme{
+  --color-bg:var(--color-bg-dark);
   --color-text: var(--color-text-dark);
   --color-background: var(--color-background-dark);
   --color-pink: var(--color-text-dark);
@@ -435,59 +441,17 @@ svg{
 .green-background{
   background-color: var(--color-green);
 }
-@media (max-width:400px) {
-  body{
-    background-color: #ffe6a2;
-  }
-  .canvas{
-    display: none;
-  }
-  .cube {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform-style: preserve-3d;
-    transform: rotateX(240deg) rotateY(-5deg) rotateZ(-155deg);
-  }
-  
-  .side {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    border-radius: 10%;
-  }
-  
-  .top {
-    transform: translateZ(-60px);
-    background: grey;
-  }
-  
-  .front {
-    transform: rotateX(90deg);
-    transform-origin: bottom;
-    background: grey;
-  }
-  
-  .left {
-    width: 60px;
-    transform: translateZ(-60px) rotateY(90deg);
-    transform-origin: right;
-    background: grey;
-  }
-    
-  
-   
-}
 
 
 
 
 @media (max-width: 968px){
- 
+  body,html{
+    overflow: visible;
+  }
+ .page{
+  overflow: visible;
+ }
   .section{
     width: 100%;
   }

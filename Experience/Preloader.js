@@ -2,6 +2,7 @@ import { EventEmitter } from "events";
 import Experience from "./Supermain.js";
 import {gsap as GSAP} from "gsap";
 
+
 import convert from "./Utils/Convert.js";
 export default class Preloader extends EventEmitter {
     constructor() {
@@ -33,7 +34,7 @@ export default class Preloader extends EventEmitter {
 
         this.room = this.experience.world.room.actualRoom;
         this.roomChildren = this.experience.world.room.roomChildren;
-        console.log(this.roomChildren);
+        
     }
 
     firstIntro() {
@@ -154,7 +155,7 @@ export default class Preloader extends EventEmitter {
                     this.camera.orthographicCamera.position,
                     {
                         y: 6.7,
-                       x:-1
+                      
                     },
                     "same"
                 )}

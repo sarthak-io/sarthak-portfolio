@@ -23,10 +23,11 @@ export default class Room {
 
     }
    setModel(){
+   
     this.actualRoom.children.forEach((child) => {
         child.castShadow= true;
         child.receiveShadow= true;
-        console.log(child.name)
+        
         if(child instanceof THREE.Group){
             child.children.forEach((groupchild)=>
             {
@@ -35,14 +36,9 @@ export default class Room {
             })
         }
      
-        // if (child.name === "Tv") {
-        //     child.children[1].rotation.x= Math.PI
-        //     child.children[1].material = new THREE.MeshBasicMaterial({
-        //         map: this.resources.items.screen,
-        //     });
-        // }
+       
         if(child.name ==="Aqua_glass"){
-            console.log(child)
+          
             child.children[0].material = new THREE.MeshPhysicalMaterial();
             child.children[0].material.roughness=0;
             child.children[0].material.color.set(0x549dd2);
@@ -50,23 +46,17 @@ export default class Room {
             child.children[0].material.transmission=1;
             child.children[0].material.opacity=1;
         }
+         // if (child.name === "Tv") {
+        //     child.children[1].rotation.x= Math.PI
+        //     child.children[1].material = new THREE.MeshBasicMaterial({
+        //         map: this.resources.items.screen,
+        //     });
+        // }
         if (child.name === "farm") {
             child.position.x = -0.289521;
             child.position.z = 8.83572;
         }
-       
-    //    if (
-    //             child.name === "mailbox" ||
-    //             child.name === "lamp" ||
-    //             child.name === "floor1" ||
-    //             child.name === "floor2" ||
-    //             child.name === "floor3" ||
-    //             child.name === "dirt" ||
-    //             child.name === "flower1" ||
-    //             child.name === "flower2"
-    //         ) {
-    //             child.scale.set(0, 0, 0);
-    //         }
+   
     child.scale.set(0, 0, 0);
    
     if (child.name === "Cube") {
@@ -91,9 +81,7 @@ export default class Room {
     rectLight.rotation.x = -Math.PI / 2;
     rectLight.rotation.z = Math.PI / 2;
     this.actualRoom.add(rectLight);
-    if(this.experience.sizes.device ==="mobile"){
-        rectLight.scale.set(0,0,0)
-    }
+  
 
     this.roomChildren["rectLight"] = rectLight;
     this.scene.add(this.actualRoom)

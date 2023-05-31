@@ -14,7 +14,7 @@ export default class Sizes extends EventEmitter{
             this.device = "desktop";
         }
        
-        window.addEventListener("resize",()=>{
+        window.addEventListener("resize", ()=>{
             this.width = window.innerWidth;
             this.height = window.innerHeight;
             this.aspect= this.width/this.height;
@@ -28,6 +28,6 @@ export default class Sizes extends EventEmitter{
                 this.device = "desktop";
                 this.emit("switchdevice", this.device);
             }
-        })
+        });
     }
 }

@@ -19,7 +19,7 @@ export default class Resources extends EventEmitter {
 
         this.setLoaders();
         this.startLoading();
-        window.addEventListener("resize", this.onResize.bind(this));
+       
     }
 
     setLoaders() {
@@ -37,44 +37,37 @@ export default class Resources extends EventEmitter {
                 this.loaders.gltfLoader.load(asset.path, (file) => {
                     this.singleAssetLoaded(asset, file);
                 });
-            } else if (asset.type === "videoTextures") {
-                this.video = {};
-                this.videoTexture = {};
+            // } else if (asset.type === "videoTextures") {
+            //     this.video = {};
+            //     this.videoTexture = {};
 
-                this.video[asset.name] = document.createElement("video");
-                this.video[asset.name].src = asset.path;
-                this.video[asset.name].muted = true;
-                this.video[asset.name].playsInline = true;
-                this.video[asset.name].autoplay = true;
-                this.video[asset.name].loop = true;
-                this.video[asset.name].play();
+            //     this.video[asset.name] = document.createElement("video");
+            //     this.video[asset.name].src = asset.path;
+            //     this.video[asset.name].muted = true;
+            //     this.video[asset.name].playsInline = true;
+            //     this.video[asset.name].autoplay = true;
+            //     this.video[asset.name].loop = true;
+            //     this.video[asset.name].play();
 
-                this.videoTexture[asset.name] = new THREE.VideoTexture(
-                    this.video[asset.name]
-                );
-                // this.videoTexture[asset.name].flipY = false;
-                this.videoTexture[asset.name].minFilter = THREE.NearestFilter;
-                this.videoTexture[asset.name].magFilter = THREE.NearestFilter;
-                this.videoTexture[asset.name].generateMipmaps = false;
-                this.videoTexture[asset.name].encoding = THREE.sRGB8Alpha8Encoding;
+            //     this.videoTexture[asset.name] = new THREE.VideoTexture(
+            //         this.video[asset.name]
+            //     );
+            //     // this.videoTexture[asset.name].flipY = false;
+            //     this.videoTexture[asset.name].minFilter = THREE.NearestFilter;
+            //     this.videoTexture[asset.name].magFilter = THREE.NearestFilter;
+            //     this.videoTexture[asset.name].generateMipmaps = false;
+            //     this.videoTexture[asset.name].encoding = THREE.sRGB8Alpha8Encoding;
 
-                this.singleAssetLoaded(asset, this.videoTexture[asset.name]);
-            }
+            //     this.singleAssetLoaded(asset, this.videoTexture[asset.name]);
+             }
         }
     }
-    onResize=() =>{
-        // Clear previous assets
-        this.items = {};
-        this.loaded = 0;
-    
-        // Restart loading process
-        this.startLoading();
-      }
+   
 
     singleAssetLoaded(asset, file) {
         this.items[asset.name] = file;
         this.loaded++;
-      console.log(file)
+     
         if (this.loaded === this.queue) {
             this.emit("ready");
         }
